@@ -1,0 +1,288 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg"
+    android:orientation="vertical"
+    android:padding="14sp">
+
+
+    <LinearLayout
+        android:id="@+id/l1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+        <!-- Drawer Name -->
+
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="50sp"
+            android:layout_height="50sp"
+            app:srcCompat="@drawable/designer" />
+
+        <TextView
+            android:id="@+id/drawerText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="6dp"
+            android:layout_marginEnd="15dp"
+            android:fontFamily="@font/bubblegum_sans"
+            android:text="Player Name"
+            android:textColor="#000000"
+            android:textSize="22dp" />
+    </LinearLayout>
+
+    <!-- Drawing Canvas -->
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/l2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <!-- Game Status -->
+
+        <TextView
+            android:id="@+id/gameStatusText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#D0DFEB"
+            android:fontFamily="@font/bubblegum_sans"
+            android:paddingLeft="4sp"
+            android:paddingTop="2sp"
+            android:paddingRight="4sp"
+            android:paddingBottom="2sp"
+            android:text="Game Status"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.03"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageView7"
+            android:layout_width="30sp"
+            android:layout_height="40sp"
+            android:padding="3sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.849"
+            app:layout_constraintStart_toStartOf="@+id/gameStatusText"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/clock" />
+
+        <TextView
+            android:id="@+id/timerTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/bubblegum_sans"
+            android:textColor="#000"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.135"
+            app:layout_constraintStart_toEndOf="@+id/imageView7"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="10s" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.example.mysteryartist.DrawingCanvas
+        android:id="@+id/drawingCanvas"
+        android:layout_width="match_parent"
+        android:layout_height="280dp"
+        android:background="@drawable/canvas" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2sp"
+        android:gravity="center|left"
+        android:orientation="horizontal"
+        android:padding="3sp"
+        android:paddingStart="5sp">
+
+        <ImageView
+            android:id="@+id/imageView17"
+            android:layout_width="35sp"
+            android:layout_height="33sp"
+            app:srcCompat="@drawable/pencil_case_2356018" />
+
+        <Button
+            android:id="@+id/colorBlack"
+            android:layout_width="35sp"
+            android:layout_height="35sp"
+            android:layout_marginEnd="8sp"
+            android:background="#00FFFFFF"
+            android:foreground="@drawable/pencil_9656905"
+            tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" /> <!-- Add margin to the right of the button -->
+
+        <Button
+            android:id="@+id/colorRed"
+            android:layout_width="33sp"
+            android:layout_height="33sp"
+            android:layout_marginEnd="8sp"
+            android:background="#00FFFFFF"
+            android:foreground="@drawable/crayon_1915989"
+            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" /> <!-- Add margin to the right of the button -->
+
+        <Button
+            android:id="@+id/colorBlue"
+            android:layout_width="33sp"
+            android:layout_height="33sp"
+            android:layout_marginEnd="8sp"
+            android:background="#00FFFFFF"
+            android:foreground="@drawable/pencil"
+            android:padding="2sp"
+            android:rotation="0"
+            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" /> <!-- Add margin to the right of the button -->
+
+        <Button
+            android:id="@+id/eraser"
+            android:layout_width="33sp"
+            android:layout_height="33sp"
+            android:layout_marginEnd="8sp"
+            android:background="#00FFFFFF"
+            android:foreground="@drawable/eraser"
+            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+        <Button
+            android:id="@+id/reset"
+            android:layout_width="33sp"
+            android:layout_height="33sp"
+            android:layout_marginEnd="8sp"
+            android:background="#00FFFFFF"
+            android:foreground="@drawable/reset1"
+            android:rotation="0"
+            tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+    </LinearLayout>
+
+    <!-- Guesses RecyclerView -->
+
+    <!-- Scoreboard RecyclerView -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/guessesRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="111dp"
+        android:layout_marginTop="16dp"
+        android:background="#D0DFEB"
+        android:textColor="#000000"
+        tools:listitem="@layout/item_guess" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/scoreboardRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginTop="16dp"
+        android:background="@android:color/white"
+        android:textColor="#000000"
+        android:visibility="gone"
+        tools:listitem="@layout/scoreboard_item" />
+
+    <!-- Guess Input Section -->
+    <LinearLayout
+        android:id="@+id/guessInputContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/guessInput"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="4dp"
+            android:layout_weight="1"
+            android:hint="Guess the Drawing"
+            android:inputType="text"
+            android:textColor="#000000"
+            android:textColorHint="#000000"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <Button
+            android:id="@+id/sendGuessButton"
+            android:layout_width="35sp"
+            android:layout_height="35sp"
+            android:layout_marginEnd="2dp"
+            android:background="#00FFFFFF"
+            android:foreground="@drawable/send"
+            app:cornerRadius="30sp"
+            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+    </LinearLayout>
+
+    <!-- Action Buttons -->
+
+    <!-- Additional Buttons -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/skipWordButton"
+            android:layout_width="60sp"
+            android:layout_height="60sp"
+            android:background="#00FFFFFF"
+            android:foreground="@drawable/file"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:textColor="#000000"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <Button
+            android:id="@+id/revealAnswerButton"
+            android:layout_width="60sp"
+            android:layout_height="60sp"
+            android:layout_marginStart="3dp"
+            android:background="#00FFFFFF"
+            android:foreground="@drawable/pass"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:textColor="#050505"
+            android:textSize="14sp"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <Button
+            android:id="@+id/scoreboardButton"
+            android:layout_width="60sp"
+            android:layout_height="60sp"
+            android:layout_marginStart="3dp"
+            android:layout_marginEnd="3sp"
+            android:foreground="@drawable/scoreboard_2716172"
+            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+        <Button
+            android:id="@+id/endGameButton"
+            android:layout_width="60sp"
+            android:layout_height="60sp"
+            android:layout_marginStart="3dp"
+            android:background="#00FFFFFF"
+            android:foreground="@drawable/game"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:textSize="14sp"
+            app:cornerRadius="50sp"
+            tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
+        <Button
+            android:id="@+id/leaveGameButton"
+            android:layout_width="60sp"
+            android:layout_height="60sp"
+            android:layout_marginStart="3dp"
+            android:background="#00E91E63"
+            android:backgroundTint="#002196F3"
+            android:foreground="@drawable/peek"
+            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+    </LinearLayout>
+
+    <!-- End Game Button -->
+
+</LinearLayout>

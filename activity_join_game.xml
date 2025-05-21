@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <ImageView
+        android:id="@+id/imageView10"
+        android:layout_width="45sp"
+        android:layout_height="40sp"
+        app:srcCompat="@drawable/crystal" />
+
+    <EditText
+        android:id="@+id/gameCodeInput"
+        android:layout_width="300sp"
+        android:layout_height="110sp"
+        android:layout_gravity="center"
+        android:layout_marginTop="0sp"
+        android:background="@drawable/square"
+        android:hint="Enter Game Code"
+        android:inputType="text"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textColorHint="#862A2828"
+        tools:ignore="TouchTargetSizeCheck" />
+
+
+    <EditText
+        android:id="@+id/playerNameInput"
+        android:layout_width="300sp"
+        android:layout_height="110sp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/square"
+        android:hint="Enter Your Name"
+        android:inputType="textPersonName"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textColorHint="#862A2828"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <Button
+        android:id="@+id/joinGameBtn"
+        android:layout_width="140sp"
+        android:layout_height="120sp"
+        android:layout_gravity="center"
+        android:background="#00FFFFFF"
+        android:foreground="@drawable/join"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <ImageView
+        android:id="@+id/imageView16"
+        android:layout_width="70sp"
+        android:layout_height="60sp"
+        android:layout_marginLeft="290sp"
+        android:layout_marginTop="220sp"
+        app:srcCompat="@drawable/crystal" />
+
+</LinearLayout>
